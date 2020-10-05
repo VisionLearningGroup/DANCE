@@ -1,0 +1,39 @@
+data:
+  dataset:
+    name: officehome # choices are ['office', 'officehome', 'caltech-imagenet', 'visda2017']
+    root_path: /research/masaito/OfficeHomeDataset_10072016 # /path/to/dataset/root
+    n_share: 12 # number of classes to be shared
+    n_source_private: 0 # number of classes in source private domain
+    n_total: 12 # number of classes in total
+  dataloader:
+    class_balance: True #
+    data_workers: 3 # how many workers to use for train dataloaders
+    batch_size: 36 # batch_size for source domain and target domain respectively
+
+model:
+  base_model: resnet50 # choices=['resnet50', 'vgg16']
+  pretrained_model: /home/grad3/keisaito/.torch/models/resnet50-19c8e357.pth # /path/to/pretrained/model
+  temp: 0.05
+train:
+  min_step: 10000 # minimum steps to run. run epochs until it exceeds the minStep
+  lr: 0.01 # learning rate for new layers. learning rate for finetune is 1/10 of lr
+  multi: 0.1
+  weight_decay: 0.0005
+  sgd_momentum: 0.9
+  momentum: 0.00
+  eta: 0.05
+  margin: 0.5
+  log_interval: 100
+  thr: 1.24
+test:
+  test_interval: 500 # interval of two continuous test phase
+  test_only: False # test a given model and exit
+  resume_file: '' # model to test
+  test_feat: False
+  w_0: -0.5 # hyper-parameter w_0
+misc:
+  gpus: 1 # how many GPUs to be used, 0 indicates CPU only
+
+log:
+  root_dir: log # the log directory (log directory will be {root_dir}/{method}/time/)
+  log_interval: 10 # steps to log scalars
