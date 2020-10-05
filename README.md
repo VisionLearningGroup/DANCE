@@ -20,7 +20,6 @@ Prepare dataset in data directory as follows.
 ./data/Real/ ## OfficeHome
 ./data/visda_train/ ## VisDA synthetic images
 ./data/visda_val/ ## VisDA real images
-
 ```
 Prepare image list.
 ```
