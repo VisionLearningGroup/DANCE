@@ -2,7 +2,7 @@
 
 This repository provides code for the paper, Universal Domain Adaptation through Self-Supervision.
 Please go to our project page to quickly understand the content of the paper or read our paper.
-### [Project Page](http://cs-people.bu.edu/keisaito/research/DANCE.html)  [Paper (will be updated soon)](https://arxiv.org/pdf/2002.07953.pdf)
+### [[Project Page]](http://cs-people.bu.edu/keisaito/research/DANCE.html)  [[Paper (will be updated soon)]](https://arxiv.org/pdf/2002.07953.pdf)
 
 
 ## Environment
