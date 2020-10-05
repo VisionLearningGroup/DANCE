@@ -14,16 +14,19 @@ Python 3.6.9, Pytorch 1.2.0, Torch Vision 0.4, [Apex](https://github.com/NVIDIA/
 [Office Dataset](https://people.eecs.berkeley.edu/~jhoffman/domainadapt/)
 [OfficeHome Dataset](http://hemanthdv.org/OfficeHome-Dataset/) [VisDA](https://github.com/VisionLearningGroup/taskcv-2017-public/tree/master/classification)
 
-Prepare dataset in data directory.
+Prepare dataset in data directory as follows.
 ```
 ./data/amazon/images/ ## Office
-./data/Real ## OfficeHome
-./data/visda_train ## VisDA synthetic images
-./data/visda_val ## VisDA real images
+./data/Real/ ## OfficeHome
+./data/visda_train/ ## VisDA synthetic images
+./data/visda_val/ ## VisDA real images
 
 ```
-
-File list is stored in ./txt.
+Prepare image list.
+```
+unzip txt.zip
+```
+File list has to be stored in ./txt.
 
 ## Train
 
