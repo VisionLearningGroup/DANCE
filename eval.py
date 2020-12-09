@@ -30,12 +30,12 @@ def test(step, dataset_test, filename, n_share, unk_class, G, C1, threshold):
             pred = pred.cpu().numpy()
 
             pred_unk = np.where(entr > threshold)
-            pred[pred_unk[0]] = n_share
+            pred[pred_unk[0]] = unk_class
             all_gt += list(label_t.data.cpu().numpy())
             all_pred += list(pred)
             for i, t in enumerate(class_list):
                 t_ind = np.where(label_t.data.cpu().numpy() == t)
-                correct_ind = np.where(pred[t_ind[0]] == i)
+                correct_ind = np.where(pred[t_ind[0]] == t)
                 correct_ind_close = np.where(pred_cls[t_ind[0]] == i)
                 per_class_correct[i] += float(len(correct_ind[0]))
                 per_class_correct_cls[i] += float(len(correct_ind_close[0]))
